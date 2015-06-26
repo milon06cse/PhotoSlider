@@ -1,0 +1,88 @@
+﻿@model List<ContentManagement.Models.PhotosModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html><html lang="en"><head>  <title>Bootstrap Example</title>  <meta charset="utf-8">  <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="src/bootstrap.min.css">  <script src="src/jquery.min.js"></script>  <script src="src/bootstrap.min.js"></script>  <style>  .carousel-inner > .item > img,  .carousel-inner > .item > a > img {      width: 70%;      height:50%;      margin: auto;  }  </style></head>
+<body>
+    <p>Top line</p>
+    <div class="container">
+        <br>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                 @foreach(ContentManagement.Models.PhotosModel photo in Model)
+                { string cl=string.Empty;
+                      if(Model.First()==photo)                          
+                      {cl="active";}
+                      else{cl="";}
+                <li data-target="#myCarousel" data-slide-to="@Model.IndexOf(photo).ToString()" class="@cl" style="background-color:blue"></li>
+                @*<li data-target="#myCarousel" data-slide-to="1"></li>*@
+                 }
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+               @*
+               <div class="item active">
+                    <img src="images/3.jpg" alt="first image" width="460" height="345">
+                    <div class="carousel-caption">
+                        <h3>first image</h3>
+                        <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                    </div>
+                </div>*@
+                @foreach(ContentManagement.Models.PhotosModel photo in Model)
+                { string cl=string.Empty;
+                      if(Model.First()==photo)                          
+                      {cl="item active";}
+                      else{cl="item";}
+                <div class="@cl">
+                    @*<img src="images/2.jpg" alt="second image" width="460" height="345">*@
+                    <img src="@photo.Photourl.ToString()" alt="@photo.AlternativeText.ToString()" width="460" height="345">                    
+                    <div class="carousel-caption">
+                        <h3>@photo.Title</h3>
+                        <p>@photo.SmallDescription</p>
+                    </div>                    
+                </div>
+                        
+                }
+            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Previous</span>    </a><a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Next</span>    </a>
+        </div>
+    </div>
+    <p>Bottom line</p>
+    <table style="border:groove">
+        @foreach (ContentManagement.Models.PhotosModel item in Model)
+        {
+            <tr style="border:thick">
+                <td>@item.PhotoId.ToString()</td>
+                <td>@item.Photourl.ToString()</td>
+                <td>@item.Title.ToString()</td>
+                <td>@item.SmallDescription.ToString()</td>
+                <td>@item.AlternativeText.ToString()</td>
+                <td>@item.ParentId.ToString()</td>
+            </tr>
+        }
+    </table>
+  @*  <div>
+        @{ 
+            var grid = new WebGrid(Model, canPage: true, rowsPerPage: 7);
+            grid.Pager(WebGridPagerModes.NextPrevious);
+            @grid.GetHtml(tableStyle: "webGrid",
+                          headerStyle: "header",
+                          fillEmptyRows: true, alternatingRowStyle: "alt", rowStyle: "rowStyle",
+            htmlAttributes: new { id = "Datatable" },
+                     columns: grid.Columns(
+                     grid.Column("Name", "Name", canSort: true),
+                     grid.Column("Address", "Address", canSort: false),
+                     grid.Column("ContactNumber", "ContactNumber", canSort: false),
+                     grid.Column("ZipCode", "ZipCode", canSort: false),
+                     grid.Column("Salary", "Salary", canSort: true),
+                     grid.Column(format: (item) => Html.ActionLink("EDIT", "Edit", new { id = item.Id })),
+                     grid.Column(format: (item) => Html.ActionLink("DELETE", "Delete", new { id = item.Id }))
+                     ));
+            
+        }
+    </div>*@
+</body>
+</html>

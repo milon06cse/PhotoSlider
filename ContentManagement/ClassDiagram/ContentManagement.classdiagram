@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="c5cc5fce-c836-483c-bd10-f65055f6f642" name="ContentManagement" linkedPackageId="d354e331-e94b-40b3-833f-0a354df4ad5d" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="5e97f852-1083-4194-b951-a988f2d2544b">
+      <profileInstance Id="49a44990-622c-43c0-a643-f286d3f5f05e" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="fc78114b-c63e-468e-ba93-7afc88967ac1">
+      <profileInstance Id="80e497a7-751f-45e3-9391-815924e66666" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8145af08-9b65-4437-ab74-fd088c53b186" name="Photos" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1f818068-e36b-4216-bea7-fb90241a896f" />
+        <ownedAttributesInternal>
+          <property Id="3435e6d1-0a9c-4596-8f7b-b00540e11077" name="ParentId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f7d8b198-c0e2-4702-a8cc-d84a6f895d08" />
+          </property>
+          <property Id="85c7344c-fb6b-4791-89fd-588f119bfbeb" name="PhotoId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5cb84388-f3fe-41f9-8e1b-01904ba4f60c" />
+          </property>
+          <property Id="a0057052-02b9-44ce-87ea-7e3a017fba58" name="Title" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b4f5f1fc-b61d-48cd-b37a-39e3d2bf65d3" />
+          </property>
+          <property Id="4df3d35f-e39a-44cb-9f82-e0d8f8d16282" name="AlternativeText" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0378166c-c2b0-4dd0-8840-01bdf09e8359" />
+          </property>
+          <property Id="ea9838c6-5178-4449-b6da-c19649d0ba7b" name="SmallDescription" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="457dee92-3041-461d-b535-a2689119787d" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1eb068d1-0e32-48ee-ad0b-def00d2e20d9" name="ShowPhotosByParentId" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="83b129c9-ed3a-4add-8dd6-909b78218e3b" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="60cfb45b-962c-443f-b8fa-45b033c6794c" name="FileIndex" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b72df77b-c741-4764-93ac-7bbbac9904b5" />
+        <ownedAttributesInternal>
+          <property Id="7119a63d-03cc-4cdb-ba62-d39f7a8804ff" name="FileId" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cd0b9980-c6ad-4da5-949d-5f9e80e04ca6" />
+          </property>
+          <property Id="a9aa25be-4813-42ab-8228-54f18b8ad1a0" name="Title" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4bec52d5-d5c8-4fbd-9af6-9761781914ea" />
+          </property>
+        </ownedAttributesInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="d354e331-e94b-40b3-833f-0a354df4ad5d" name="ClassDiagram">
+    <elementDefinition Id="67e5c97f-5e58-4a0c-8acd-29322bf25c6e" />
+  </package>
+</logicalClassDesignerModel>
